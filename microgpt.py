@@ -12,7 +12,7 @@ random.seed(42) # Let there be order among chaos
 
 # Let there be a Dataset `docs`: list[str] of documents (e.g. a list of names)
 if not os.path.exists('input.txt'):
-    import urllib.request
+    import urllib.request 
     names_url = 'https://raw.githubusercontent.com/karpathy/makemore/988aa59/names.txt'
     urllib.request.urlretrieve(names_url, 'input.txt')
 docs = [line.strip() for line in open('input.txt') if line.strip()]
@@ -183,7 +183,7 @@ for step in range(num_steps):
     print(f"step {step+1:4d} / {num_steps:4d} | loss {loss.data:.4f}", end='\r')
 
 # Inference: may the model babble back to us
-temperature = 0.5 # in (0, 1], control the "creativity" of generated text, low to high
+temperature = 1 # in (0, 1], control the "creativity" of generated text, low to high
 print("\n--- inference (new, hallucinated names) ---")
 for sample_idx in range(20):
     keys, values = [[] for _ in range(n_layer)], [[] for _ in range(n_layer)]
