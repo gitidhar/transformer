@@ -17,7 +17,7 @@ if not os.path.exists('input.txt'):
     urllib.request.urlretrieve(names_url, 'input.txt')
 docs = [line.strip() for line in open('input.txt') if line.strip()]
 random.shuffle(docs)
-print(f"num docs: {len(docs)}")
+print(f"num docs: {len(docs)}") 
 
 # Let there be a Tokenizer to translate strings to sequences of integers ("tokens") and back
 uchars = sorted(set(''.join(docs))) # unique characters in the dataset become token ids 0..n-1
